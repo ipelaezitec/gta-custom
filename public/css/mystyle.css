@@ -1,0 +1,77 @@
+/* https://fonts.googleapis.com/css?family=Montserrat|Raleway|Poppins'
+
+font-family:'Montserrat';
+font-family:'Poppins';
+font-family:'Raleway'; */
+
+/* general css*/
+.background{
+  background-image: url("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535262831493x220284768845885980%2FDesktop_Screenshot_2018.08.11_-_00.34.36.95_60.png?w=&h=&auto=compress&fit=max");
+  background-color: black;
+}
+/* header css */
+.container-fluid{
+  margin-right: 0px;
+  margin-right: 0px;
+}
+
+.general-button{
+  border: solid 1px rgb(255, 157, 61) ;
+  /* background-color: black; */
+  background: none transparent;
+  color: white;
+  font-family: 'Montserrat',Verdana, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  /* padding: 0.1rem 1.5rem 0.5rem 1.5rem */
+  padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+  cursor: pointer;
+}
+
+.custom-header{
+  background-color: black;
+  min-height: 125px;
+  /* display : flex; */
+  /* justify-items: center; */
+}
+
+.line{
+  min-height: 2px;
+  /* background-color: rgb(255, 178, 34); */
+  background-color:#FF9D3D;
+  box-shadow:0 4px 4px 0 rgba(0, 0, 0, 1);
+  
+}
+
+.logo-center{
+  display: block;
+
+  width: 70%;
+  height: 70%;
+}
+
+/* left website css */
+
+.row-video{
+
+}
+
+/* right website css */
+
+.custom-card{
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  min-height: 775px;
+  box-shadow:0 10px 10px 0 rgba(0, 0, 0, 1);
+
+}
+
+.appli-button{
+  color: white;
+  background-color: orange;
+  width: 200px;
+  display:block;
+}
+
+
+
