@@ -29,20 +29,30 @@
                     </div>
             </div>
         </div>
-        <div class="col">
-                   <div class="custom-card p-2 mt-4">
-                       <div class="text-card p-4">
-                            Requirements:
-                            • You must be 16+ to apply.
-                            • You must have a working microphone.
-                            • You must have a Legal Copy of Grand Theft Auto V
-                            • Please take time and effort in your application.
-                            Before you Apply:
-                            We strongly recommend you to take the time and effort required to be here. Applications with little to no effort will be denied!
-                            About us:
-                            SunbeltRP is a community based on civilian life roleplay with extensively trained emergency services. We aim to give the best experience to all members. Here at Sunbelt RP were Not just a Community, but a Family. Where everyone has a Chance to Make a Difference.
-                       </div>
-                       <button class="mx-auto btn appli-button">
+        <div class="col-5">
+                   <div class="custom-card p-4 mt-4">
+                                                      Requirements:
+                               • You must be 16+ to apply.
+                               • You must have a working microphone.
+                               • You must have a Legal Copy of Grand Theft Auto V
+                               • Please take time and effort in your application.
+                               Before you Apply:
+                               We strongly recommend you to take the time and effort required to be here. Applications with little to no effort will be denied!
+                               About us:
+                               SunbeltRP is a community based on civilian life roleplay with extensively trained emergency services. We aim to give the best experience to all members. Here at Sunbelt RP were Not just a Community, but a Family. Where everyone has a Chance to Make a Difference.
+                               aaa
+                               a
+                               a
+                               a
+                               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                               aaaaaaaaaaaaaaaaaaa
+                               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                               aaaaaaaaaaaaaa
+                               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                               aaaaaaa
+                               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                            
+                        <button class="mx-auto btn appli-button">
                            Apply today!
                        </button>
  
