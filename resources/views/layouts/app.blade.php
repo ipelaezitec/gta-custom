@@ -31,7 +31,7 @@
                         {{-- <a href="{{ url('/') }}" class="m-1">
                             <button class="general-button">SBRP Website</button>
                         </a> --}}
-                        <a href="" class="m-1">
+                        <a href="/" class="m-1">
                             <button class="general-button">Home</button>
                         </a>
                         <a href="" class="m-1">
@@ -48,8 +48,8 @@
                             <a href="" class="m-1">
                                 <button class="general-button">Login</button>
                             </a>
-                            <a href="" class="m-1">
-                                <button class="general-button">Sing Up</button>
+                            <a href="{{ route('register') }}" class="m-1">
+                                <button class="general-button">Sign Up</button>
                             </a>
                         @else
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
