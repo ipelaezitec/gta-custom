@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/','HomeController@index');
 Route::get('/application','ApplicationController@index');
+
+Route::get('/panel/custom','CustomController@index');
+//Route::view('/panel/custom', 'custom.index');
