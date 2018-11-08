@@ -24,3 +24,5 @@ Route::get('/application','ApplicationController@index');
 
 Route::get('/panel/custom','CustomController@index');
 //Route::view('/panel/custom', 'custom.index');
+// todo : 
+Route::get('/panel','PanelController@index');
