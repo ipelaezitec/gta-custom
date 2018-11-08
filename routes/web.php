@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/','HomeController@index');
 Route::get('/application','ApplicationController@index');
+
+// todo : 
+Route::get('/panel','PanelController@index');
