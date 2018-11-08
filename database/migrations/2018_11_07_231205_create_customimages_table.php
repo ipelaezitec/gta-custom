@@ -17,7 +17,7 @@ class CreateCustomimagesTable extends Migration
             $table->increments('id');
 
             $table->integer('custom_id')->unsigned();
-            $table->foreign('custom_id')->references('id')->on('customomizations');
+            $table->foreign('custom_id')->references('id')->on('customizations');
             
             $table->string('url');
             $table->timestamps();

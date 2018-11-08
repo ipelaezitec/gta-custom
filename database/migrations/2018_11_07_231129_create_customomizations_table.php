@@ -13,7 +13,7 @@ class CreateCustomomizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('customomizations', function (Blueprint $table) {
+        Schema::create('customizations', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('user_id')->unsigned();
@@ -36,6 +36,6 @@ class CreateCustomomizationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customomizations');
+        Schema::dropIfExists('customizations');
     }
 }
