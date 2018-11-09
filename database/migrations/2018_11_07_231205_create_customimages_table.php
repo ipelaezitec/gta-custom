@@ -31,6 +31,12 @@ class CreateCustomimagesTable extends Migration
      */
     public function down()
     {
+        Schema::table('customimages', function (Blueprint $table) {
+            $table->dropForeign('customimages_custom_id_foreign');
+            $table->dropColumn('custom_id');
+
+        });
+
         Schema::dropIfExists('customimages');
     }
 }

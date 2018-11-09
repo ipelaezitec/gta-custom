@@ -36,6 +36,13 @@ class CreateCustomomizationsTable extends Migration
      */
     public function down()
     {
+        Schema::table('customizations', function (Blueprint $table) {
+            $table->dropForeign('customizations_user_id_foreign');
+            $table->dropColumn('user_id');
+            
+  
+        });
+
         Schema::dropIfExists('customizations');
     }
 }
