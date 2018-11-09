@@ -17,12 +17,11 @@
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/','HomeController@index');
 Route::get('/application','ApplicationController@index');
 
 Route::get('/panel/custom','CustomController@index');
-//Route::view('/panel/custom', 'custom.index');
+Route::post('/panel/custom/store','CustomController@store');
+
 // todo : 
 Route::get('/panel','PanelController@index');
