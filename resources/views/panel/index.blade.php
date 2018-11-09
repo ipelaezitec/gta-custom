@@ -3,7 +3,7 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col-3">
+      <div class="col-sm-3">
         <div class="d-flex flex-column side-panel p-2">
           
           <h2 class="text-center">Admin Panel </h2>
@@ -27,7 +27,7 @@
       </div>
     
       
-      <div class="col-9">
+      <div class="col-sm-9">
           <div class="panel-card">
             
             @yield('appcontent')

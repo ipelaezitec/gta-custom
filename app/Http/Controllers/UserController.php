@@ -11,12 +11,11 @@ class UserController extends Controller
     // para mostrar todos los users en el panel
     public function showUsers()
     {
-        // $posts = Post::all();
-        // $posts = Post::latest()->paginate(10);
+        
         $users = User::paginate(50);
         
-        // foreach ($posts as $post){
-        //     $usuario[] = $post->user;
+        // foreach ($users as $user){
+        //     $states[] = $user->state;
         // }
         
         return view('panel.users',[
