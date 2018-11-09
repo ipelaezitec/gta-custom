@@ -20,8 +20,8 @@ Auth::routes();
 Route::get('/','HomeController@index');
 Route::get('/application','ApplicationController@index');
 
-Route::get('/panel/custom','CustomController@index');
-Route::post('/panel/custom/store','CustomController@store');
+Route::get('/panel/custom','CustomController@index')->name('custom');
+Route::post('/panel/custom/store','CustomController@store')->name('store');
 
 // todo : 
-Route::get('/panel','PanelController@index');
+Route::get('/panel','PanelController@index')->name('panel');

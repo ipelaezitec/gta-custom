@@ -16,10 +16,10 @@ class CreateCustomimagesTable extends Migration
         Schema::create('customimages', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('custom_id')->unsigned();
+            $table->unsignedInteger('custom_id')->nullable();
             $table->foreign('custom_id')->references('id')->on('customomizations');
             
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }
