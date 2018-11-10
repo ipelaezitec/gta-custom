@@ -10,7 +10,7 @@
 
     <div class="list-group">
         @forelse ($users as $user)
-          <a href="/{{$user->id}}" class="list-group-item list-group-item-action flex-column align-items-start ">
+          <a href="/panel/user/{{$user->id}}" class="list-group-item list-group-item-action flex-column align-items-start ">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{$user->name}}</h5>
               <small>created at : {{$user->created_at}}</small>

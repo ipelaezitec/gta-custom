@@ -69,6 +69,7 @@
                           @endif
                       </div>
                   </div>
+                  <hr>
                   <label for="image1" class="col-md-8 col-form-label text-md-right">{{ __('Carousel images') }}</label>
                   <div class="form-group row">
                       <label for="image1" class="col-md-4 col-form-label text-md-right">{{ __('Image1') }}</label>

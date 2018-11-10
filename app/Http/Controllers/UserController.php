@@ -14,6 +14,7 @@ class UserController extends Controller
         
         $users = User::paginate(50);
         
+        // Todo : Necesito mostrar el state en panel/users y panel/user
         // foreach ($users as $user){
         //     $states[] = $user->state;
         // }
@@ -28,14 +29,10 @@ class UserController extends Controller
     public function showUser($userId)
     {   
         // $user=User::where('username', $username)->first();
-
-        // $posts=Post::where('user_id', $user->id)->paginate(10);
-        
-        return view('panel.show',[
+        $user=User::find($userId);
+        return view('panel.user',[
             'user'=>$user,
-            'posts'=>$posts
             ]);
-        return view('panel.user',[]);
     }
 
 }

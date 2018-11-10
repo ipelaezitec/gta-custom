@@ -21,6 +21,8 @@ Route::get('/','HomeController@index');
 Route::get('/application','ApplicationController@index');
 
 
+
+// panel
 Route::get('/panel','PanelController@index')->name('panel');
 
 // panel /custom
@@ -32,7 +34,7 @@ Route::get('/panel/appreceived/{id)','AppReceivedController@showSingleApp');
 
 //panel / user
 Route::get('/panel/users','UserController@showUsers');
-Route::get('/panel/user/{id)','UserController@showUser');
+Route::get('/panel/user/{id}','UserController@showUser')->name('user');
     
     
     // Route::get('/panel','PanelController@index');
