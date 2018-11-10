@@ -4,7 +4,7 @@ namespace gta;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Customomization extends Model
+class Customization extends Model
 {
     //
 }

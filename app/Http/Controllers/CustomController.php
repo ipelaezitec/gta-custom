@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreCustomPost;
-use App\Customomization;
-use App\Customimage;
+use gta\Http\Requests\StoreCustomPost;
+use gta\Customization;
+use gta\Customimage;
 
 class CustomController extends Controller
 {
     public function index() {
-        $custom = Customomization::find(1);
+        $custom = Customization::find(1);
         if($custom) {
             $images = Customimage::where('custom_id', $custom->id)->get();
         }else {
@@ -26,10 +26,10 @@ class CustomController extends Controller
 
         //dd($request->input('color'));
 
-        $custom = Customomization::find(1);
+        $custom = Customization::find(1);
 
         if (!$custom) {
-            $custom =  new Customomization;
+            $custom =  new Customization;
         }
 
         //$custom->user_id = Auth::id();

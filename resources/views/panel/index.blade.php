@@ -2,11 +2,6 @@
 
 @section('content')
   <div class="container">
-<<<<<<< HEAD
-  <a href="{{ url ('/panel/custom') }}" class="nada">
-      <button>Custom</button>
-    </a>
-=======
     <div class="row">
       <div class="col-sm-3">
         <div class="d-flex flex-column side-panel p-2">
@@ -14,7 +9,6 @@
           <h2 class="text-center">Admin Panel </h2>
           
           <div class="dropdown-divider"></div>
->>>>>>> master
 
           <a href="{{url ('/panel/appreceived')}}" class="text-left bottom-color btn  btn-block active" role="button" aria-pressed="true">
             Applications received

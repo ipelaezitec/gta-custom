@@ -1,18 +1,19 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+@extends('panel.index')
 
-
-@section('content')
-<div class="container">
+{{-- @section('content') --}}
+@section('appcontent')
+<div class="container p-5 font-montserrat">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="custom-card-register">
-          <div class="card-header">{{ __('Custom') }}</div>
+        {{-- <div class="custom-card-register"> --}}
+          {{-- <div class="card-header">{{ __('Custom') }}</div> --}}
           @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}
             </div>
           @endif
-            <div class="card-body">
+            {{-- <div class="card-body"> --}}
               <form method="POST" action=" {{ route('store') }} "> 
                   @csrf
                   <div class="form-group row">
@@ -137,10 +138,12 @@
                             </div>
                         </div>
                     </form>
-              </form>
+              
           </div>
         </div>
       </div>
+    
     </div>
+    
 </div>
 @endsection

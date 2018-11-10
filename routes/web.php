@@ -20,20 +20,20 @@ Auth::routes();
 Route::get('/','HomeController@index');
 Route::get('/application','ApplicationController@index');
 
-<<<<<<< HEAD
+
+Route::get('/panel','PanelController@index')->name('panel');
+
+// panel /custom
 Route::get('/panel/custom','CustomController@index')->name('custom');
 Route::post('/panel/custom/store','CustomController@store')->name('store');
-
-// todo : 
-Route::get('/panel','PanelController@index')->name('panel');
-=======
-// panel 
-Route::get('/panel','PanelController@index');
+// panel / app received
 Route::get('/panel/appreceived','AppReceivedController@showAppsReceived');
 Route::get('/panel/appreceived/{id)','AppReceivedController@showSingleApp');
+
+//panel / user
 Route::get('/panel/users','UserController@showUsers');
-Route::get('/panel/appreceived/{id)','UserController@showUser');
-
-
+Route::get('/panel/user/{id)','UserController@showUser');
+    
+    
+    // Route::get('/panel','PanelController@index');
 //Example Route::get('/user/show/{id}','UserController@show');
->>>>>>> master
