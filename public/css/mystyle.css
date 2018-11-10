@@ -91,4 +91,10 @@ font-family:'Raleway'; */
   display:inline-block;
 }
 
+.div-preview {
+  max-height: 100px;
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
 
