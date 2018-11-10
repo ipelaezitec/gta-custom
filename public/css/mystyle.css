@@ -16,7 +16,8 @@ font-family:'Raleway'; */
 }
 
 .general-button{
-  border: solid 1px rgb(255, 157, 61) ;
+  border: solid 1px orange ;
+  /* border: solid 1px rgb(255, 157, 61) ; */
   /* background-color: black; */
   background: none transparent;
   color: white;
@@ -38,7 +39,8 @@ font-family:'Raleway'; */
 .line{
   min-height: 2px;
   /* background-color: rgb(255, 178, 34); */
-  background-color:#FF9D3D;
+  /* background-color:#FF9D3D; */
+  background-color: orange;
   box-shadow:0 4px 4px 0 rgba(0, 0, 0, 1);
   
 }
@@ -91,4 +93,34 @@ font-family:'Raleway'; */
   display:inline-block;
 }
 
+/* admin panel */
 
+.side-panel{
+  max-width: 100%;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* min-height: 400px; */
+  box-shadow:0 10px 10px 0 rgba(0, 0, 0, 1);
+}
+
+.bottom-color{
+  background-color: orange;
+  color: black;
+  font-family: 'Montserrat',Verdana, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.panel-card{
+  max-width: 100%;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 500px;
+  box-shadow:0 10px 10px 0 rgba(0, 0, 0, 1);
+  /* padding:10px; */
+
+}
+
+.font-montserrat{
+  font-family: 'Montserrat',Verdana, Tahoma, sans-serif;
+}

@@ -38,11 +38,14 @@ class CreateApplicationsTable extends Migration
      */
     public function down()
     {
-        // Schema::table('applications', function (Blueprint $table) {
-        //     $table->dropForeign('applications_user_id_foreign');
-        //     $table->dropColumn('user_id');
+        Schema::table('applications', function (Blueprint $table) {
+            $table->dropForeign('applications_user_id_foreign');
+            $table->dropColumn('user_id');
+            
+            $table->dropForeign('applications_state_id_foreign');
+            $table->dropColumn('state_id');
 
-        // });
+        });
 
         Schema::dropIfExists('applications');
     }

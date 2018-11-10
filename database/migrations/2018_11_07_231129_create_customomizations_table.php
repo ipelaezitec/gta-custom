@@ -13,7 +13,7 @@ class CreateCustomomizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('customomizations', function (Blueprint $table) {
+        Schema::create('customizations', function (Blueprint $table) {
             $table->increments('id');
 
             $table->unsignedInteger('user_id')->nullable();
@@ -36,6 +36,13 @@ class CreateCustomomizationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customomizations');
+        Schema::table('customizations', function (Blueprint $table) {
+            $table->dropForeign('customizations_user_id_foreign');
+            $table->dropColumn('user_id');
+            
+  
+        });
+
+        Schema::dropIfExists('customizations');
     }
 }
