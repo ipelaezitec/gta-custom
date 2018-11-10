@@ -1,11 +1,10 @@
 {{-- @extends('layouts.app') --}}
 @extends('panel.index')
 
-{{-- @section('content') --}}
 @section('appcontent')
 <div class="container p-5 font-montserrat">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-12">
         {{-- <div class="custom-card-register"> --}}
           {{-- <div class="card-header">{{ __('Custom') }}</div> --}}
           @if (session('status'))
@@ -147,7 +146,7 @@
                         @if (count($images) > 0)
                             <img id="image5-preview" src="{{ $images[4]->url }}" class="img-fluid img-thumbnail" title="image5" alt="Error">
                         @else
-                            <img id="image5-preview" src="" class="img-fluid img-thumbnail" title="image5" style="display: none;" alt="Error>
+                            <img id="image5-preview" src="" class="img-fluid img-thumbnail" title="image5" style="display: none;" alt="Error">
                         @endif
                     </div>
                 </div>
@@ -155,7 +154,7 @@
                     <label for="video" class="col-md-2 col-form-label text-md-right">{{ __('Video') }}</label>
 
                     <div class="col-md-8">
-                        <input id="video" type="url" class="form-control{{ $errors->has('video') ? ' is-invalid' : '' }}" name="video" value="{{ (isset($custom)? $custom->videourl : old('video')) }}" placeholder="url video" required autofocus>
+                        <input id="video" type="url" class="form-control{{ $errors->has('video') ? ' is-invalid' : '' }}" name="video" value="{{ (isset($custom)? $custom->videourl : old('video')) }}" placeholder="https://www.youtube.com/embed/IDVIDEO" required autofocus>
 
                         @if ($errors->has('video'))
                             <span class="invalid-feedback" role="alert">

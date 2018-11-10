@@ -6,27 +6,58 @@
         
         <div class="col-sm-7">
             <div class="row mt-4 ">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256396516x634409788530319900%2Flarge.20180728020246_1.jpg.8250ed43c66c1f6282da4b76d31a1c58.jpg?w=768&h=431&auto=compress&fit=max" alt="First slide">
-                              </div>
-                              <div class="carousel-item">
-                                <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256489897x761541015002876500%2Flarge.20180727041442_1.jpg.b54c3468fff407b67acb40f0872fe79b.jpg?w=768&h=431&auto=compress&fit=max" alt="Second slide">
-                              </div>
-                             
-                              <div class="carousel-item">
-                                <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256600713x531589473830536000%2F20180724000142_1.jpg?w=768&h=431&auto=compress&fit=max" alt="Four slide">
-                              </div>
-                            </div>
-                          </div>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                         <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            @if (!$custom)
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256396516x634409788530319900%2Flarge.20180728020246_1.jpg.8250ed43c66c1f6282da4b76d31a1c58.jpg?w=768&h=431&auto=compress&fit=max" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256489897x761541015002876500%2Flarge.20180727041442_1.jpg.b54c3468fff407b67acb40f0872fe79b.jpg?w=768&h=431&auto=compress&fit=max" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256600713x531589473830536000%2F20180724000142_1.jpg?w=768&h=431&auto=compress&fit=max" alt="Four slide">
+                                </div>
+                            @else
+                                @foreach ($images as $image)
+                                    @if ($loop->first)
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="{{ $image->url }}" alt="error" style="width:768px; height: 431px;">
+                                        </div>
+                                    @else
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="{{ $image->url }}" alt="error" style="width:768px; height: 431px;">
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @endif
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>          
             </div>
            
             <div class="row mt-4 video-row">
-                    
-                    <div class="embed-responsive embed-responsive-16by9">
+                <div class="embed-responsive embed-responsive-16by9">
+                    @if (!$custom)
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fB8TyLTD7EE"allowfullscreen></iframe>
-                    </div>
+                    @else
+                        <iframe class="embed-responsive-item" src="{{ $custom->videourl }}"allowfullscreen></iframe>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="col-5">
