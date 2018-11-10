@@ -7,6 +7,11 @@
       <div class="col-md-8">
         <div class="custom-card-register">
           <div class="card-header">{{ __('Custom') }}</div>
+          @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+          @endif
             <div class="card-body">
               <form method="POST" action=" {{ route('store') }} "> 
                   @csrf
@@ -68,7 +73,7 @@
                       <label for="image1" class="col-md-4 col-form-label text-md-right">{{ __('Image1') }}</label>
 
                       <div class="col-md-6">
-                          <input id="image1" type="url" class="form-control{{ $errors->has('image1') ? ' is-invalid' : '' }}" name="image1" value="{{ (isset($images)? $images->url : old('imagen1')) }}" placeholder="url image1" required autofocus>
+                          <input id="image1" type="url" class="form-control{{ $errors->has('image1') ? ' is-invalid' : '' }}" name="image1" value="{{ ( (count($images) > 0)? $images[0]->url : old('imagen1') ) }}" placeholder="url image1" required autofocus>
                           @if ($errors->has('image1'))
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $errors->first('image1') }}</strong>
@@ -80,7 +85,7 @@
                       <label for="image2" class="col-md-4 col-form-label text-md-right">{{ __('Image2') }}</label>
 
                       <div class="col-md-6">
-                          <input id="image2" type="url" class="form-control{{ $errors->has('image2') ? ' is-invalid' : '' }}" name="image2" value="{{ old('image2') }}" placeholder="url image2"  autofocus>
+                          <input id="image2" type="url" class="form-control{{ $errors->has('image2') ? ' is-invalid' : '' }}" name="image2" value="{{ ( (count($images) > 0)? $images[1]->url : old('imagen2')) }}" placeholder="url image2"  required autofocus>
                           @if ($errors->has('image2'))
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $errors->first('image2') }}</strong>
@@ -92,7 +97,7 @@
                       <label for="image3" class="col-md-4 col-form-label text-md-right">{{ __('Image3') }}</label>
 
                       <div class="col-md-6">
-                          <input id="image3" type="url" class="form-control{{ $errors->has('image3') ? ' is-invalid' : '' }}" name="image3" value="{{ old('image3') }}" placeholder="url image3"  autofocus>
+                          <input id="image3" type="url" class="form-control{{ $errors->has('image3') ? ' is-invalid' : '' }}" name="image3" value="{{ ( (count($images) > 0)? $images[2]->url : old('imagen3')) }}" placeholder="url image3" required autofocus>
                           @if ($errors->has('image3'))
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $errors->first('image3') }}</strong>
@@ -104,7 +109,7 @@
                       <label for="image4" class="col-md-4 col-form-label text-md-right">{{ __('Image4') }}</label>
 
                       <div class="col-md-6">
-                          <input id="image4" type="url" class="form-control{{ $errors->has('image4') ? ' is-invalid' : '' }}" name="image4" value="{{ old('image4') }}" placeholder="url image4"   autofocus>
+                          <input id="image4" type="url" class="form-control{{ $errors->has('image4') ? ' is-invalid' : '' }}" name="image4" value="{{ ( (count($images) > 0)? $images[3]->url : old('imagen4')) }}" placeholder="url image4" required autofocus>
                           @if ($errors->has('image4'))
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $errors->first('image4') }}</strong>
@@ -116,7 +121,7 @@
                       <label for="image5" class="col-md-4 col-form-label text-md-right">{{ __('Image5') }}</label>
 
                       <div class="col-md-6">
-                          <input id="image5" type="url" class="form-control{{ $errors->has('image5') ? ' is-invalid' : '' }}" name="image5" value="{{ old('image5') }}" placeholder="url image5"  autofocus>
+                          <input id="image5" type="url" class="form-control{{ $errors->has('image5') ? ' is-invalid' : '' }}" name="image5" value="{{ ( (count($images) > 0)? $images[4]->url : old('imagen5')) }}" placeholder="url image5" required autofocus>
                           @if ($errors->has('image5'))
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $errors->first('image5') }}</strong>
