@@ -30,6 +30,7 @@ class CustomController extends Controller
     public function store(StoreCustomPost $request) {
 
         //dd($request->input('color'));
+        // dd($request);
 
         $custom = Customization::find(1);
 
@@ -43,6 +44,8 @@ class CustomController extends Controller
         $custom->videourl = $request->input('video');
         $custom->colorbtn = $request->input('colorbtn');
         $custom->bgcolorbtn = $request->input('bgcolorbtn');
+        $custom->hometext = $request->input('editordata');
+        
         $custom->save();
 
         $images = Customimage::where('custom_id', 1)->get();

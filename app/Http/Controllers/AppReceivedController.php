@@ -4,11 +4,8 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\Application;
-<<<<<<< HEAD
 use gta\Customization;
-=======
 use gta\Auth;
->>>>>>> dev
 
 class AppReceivedController extends Controller
 {

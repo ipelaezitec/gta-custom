@@ -198,10 +198,11 @@
                     </div>
                 </div>
                 
-
+                
                 <div class="container">
                     <div class="row justify-content-md-center">
-                        <div id="summernote"> text </div>
+                        <textarea id="summernote" name="editordata"  class="form-control{{ $errors->has('summernote') ? ' is-invalid' : '' }}" value="{!! (isset($custom)? $custom->hometext : old('hometext')) !!}" required>{!!$custom->hometext!!}</textarea>
+ 
                     </div>
                 </div>
 

@@ -20,7 +20,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
-
+    {{-- <script src="{{asset('js/summernote.js')}}"> </script> --}}
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
@@ -99,21 +99,24 @@
     </div>
 
     <script>
+        
         $('#summernote').summernote({
             placeholder: 'Hello stand alone ui',
             tabsize: 2,
-            width:400,
+            width:440,
             height: 600,
             toolbar: [
     // [groupName, [list of button]]
     ['style', ['bold', 'italic', 'underline', 'clear']],
     ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['fontsize', ['fontsize']],
     ['color', ['color']],
     ['para', ['ul', 'ol', 'paragraph']],
-    ['height', ['height']]
+    // ['height', ['height']]
   ]
           });
+
+    // ['fontsize', ['8', '9', '10', '11', '12', '14', '18']],
+        
     </script>
     {{-- Changed @if to @isset --}}
     @isset ($custom)

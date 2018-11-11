@@ -36,6 +36,7 @@ class StoreCustomPost extends FormRequest
             'image3' => 'required|URL|max:255',
             'image4' => 'required|URL|max:255',
             'image5' => 'required|URL|max:255',
+            'editordata'=> 'required|min:1|max:2300',
         ];
     }
 }

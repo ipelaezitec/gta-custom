@@ -4,11 +4,8 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
-<<<<<<< HEAD
 use gta\Customization;
-=======
 use gta\Auth;
->>>>>>> dev
 
 class UserController extends Controller
 {
