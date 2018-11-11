@@ -15,13 +15,14 @@ class CreateCustomizationsTable extends Migration
     {
         Schema::create('customizations', function (Blueprint $table) {
             $table->increments('id');
-
+            //$table->unsignedInteger('id')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->string('videourl')->nullable();
             $table->string('backgroundurl')->nullable();
-            $table->string('color')->nullable();
+            $table->string('colorbtn')->nullable();
+            $table->string('bgcolorbtn')->nullable();
             $table->string('logourl')->nullable();
             
 

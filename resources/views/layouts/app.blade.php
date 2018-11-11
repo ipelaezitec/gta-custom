@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -20,7 +21,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
 </head>
-<body class="background">
+<body class="background" id="background">
     <div id="app">
         {{-- <header class="custom-header align-items-center "> --}}
         <header class="custom-header d-flex justify-content-between px-4 align-items-center ">
@@ -39,8 +40,8 @@
                         </a>
                     </div>  
                     
-                    <div class="d-flex">
-                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535255119052x357929023215547200%2FSunbelt-Logo-cad.png?w=192&h=&auto=compress&fit=max" alt="" class="logo-center mx-auto">
+                    <div id="div-logo" class="d-flex">
+                        <img id="logo" class="img-fluid" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535255119052x357929023215547200%2FSunbelt-Logo-cad.png?w=192&h=&auto=compress&fit=max" alt="" class="logo-center mx-auto">
                     </div>  
                     
                     <div class="d-flex">
@@ -88,10 +89,24 @@
         </main>
     </div>
 
+     @if ($custom)
+        <script>
+            background = document.getElementById('background');
+            background.style.backgroundImage = "url('{{ $custom->backgroundurl }}')";
 
+            logo = document.getElementById('logo');
+            logo.src = '{{ $custom->logourl }}';
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            btnsNav =  document.querySelectorAll(".general-button");
+            for (let i = 0; i < btnsNav.length; i++) {
+                btnsNav[i].style.color = '{{ $custom->colorbtn }}';
+                btnsNav[i].style.backgroundColor = '{{ $custom->bgcolorbtn }}';
+            }
+        </script>
+    @endif
+
+    {{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> --}}
 </body>
 </html>

@@ -120,7 +120,18 @@ font-family:'Raleway'; */
   /* padding:10px; */
 
 }
+.div-preview {
+  max-height: 100px;
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
 
 .font-montserrat{
   font-family: 'Montserrat',Verdana, Tahoma, sans-serif;
+}
+
+#div-logo {
+  max-height: 192px;
+  max-width: 192px;
 }
