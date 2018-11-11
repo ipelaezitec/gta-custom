@@ -35,8 +35,9 @@ Route::get('/panel/appreceived','AppReceivedController@showAppsReceived');
 Route::get('/panel/appreceived/{id}','AppReceivedController@showSingleApp');
 
 //panel / user
-Route::get('/panel/users','UserController@showUsers');
+Route::get('/panel/users','UserController@showUsers')->name('users');
 Route::get('/panel/user/{id}','UserController@showUser')->name('user');
+Route::get('/panel/user/delete/{id}','UserController@deleteUser')->name('deleteuser');
     
     
     // Route::get('/panel','PanelController@index');

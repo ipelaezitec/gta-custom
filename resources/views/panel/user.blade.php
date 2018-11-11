@@ -32,7 +32,7 @@
             </ul>
 
             <div class="card-body">
-              <a href="#" class="card-link">Delete</a>
+            <a href="/panel/user/delete/{{$user->id}}" class="card-link">Delete User</a>
               <a href="#" class="card-link">Change state</a>
             </div>
           </div>
