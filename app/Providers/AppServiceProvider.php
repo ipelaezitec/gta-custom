@@ -3,6 +3,8 @@
 namespace gta\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use gta\Customization;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $custom = Customization::find(1);
+        View::share('custom', $custom);
     }
 
     /**
