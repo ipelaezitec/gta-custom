@@ -2,7 +2,10 @@
 @extends('panel.index')
 
 @section('appcontent')
+<h2 class="text-center font-montserrat"> Customization Panel</h2>
+<hr>
 <div class="container p-5 font-montserrat">
+
     <div class="row justify-content-center">
       <div class="col-md-12">
         {{-- <div class="custom-card-register"> --}}
@@ -54,7 +57,7 @@
                         @endif
                     </div>
                   </div>
-                <label for="image1" class="col-md-12">{{ __('Carousel images:') }}</label>
+                <label for="image1" class="col-md-12  p-2 text-center font-weight-bold">{{ __('Carousel of images:') }}</label>
                 <div class="form-group row">
                     <label for="image1" class="col-md-2 col-form-label text-md-right">{{ __('Image1') }}</label>
                     
@@ -163,9 +166,9 @@
                         @endif
                     </div>
                 </div>
-                <label for="image1" class="col-md-12">{{ __('Colors Nav Buttons:') }}</label>
+                <label for="image1" class="col-md-12 p-2 text-center font-weight-bold">{{ __('Colors Nav Buttons:') }}</label>
                 <div class="form-group row">
-                    <label for="colorbtn" class="col-md-2 col-form-label text-md-right">{{ __('Text button') }}</label>
+                    <label for="colorbtn" class="col-md-2 col-form-label text-md-right">{{ __('General Nav Color') }}</label>
                     
                     <div class="col-md-5">
                         <input id="colorbtn" type="color" class="col-10" name="colorbtn" value="{{ (isset($custom)? $custom->colorbtn : old('colorbtn')) }}" onchange="javascript:document.getElementById('chosen-colorbtn').value = document.getElementById('colorbtn').value;">                        
@@ -194,13 +197,27 @@
                         <input id="chosen-bgcolorbtn" type="text" class="form-control{{$errors->has('chosen-bgcolorbtn') ? ' is-invalid' : '' }}" name="chosen-bgcolorbtn" value="{{ (isset($custom)? $custom->bgcolorbtn : old('chosen-bgcolorbtn')) }}" onchange="javascript:document.getElementById('bgcolorbtn').value = document.getElementById('chosen-bgcolorbtn').value;" required autofocus>
                     </div>
                 </div>
-                <div class="form-group row mb-0">
+                
+                
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <textarea id="summernote" name="editordata"  class="form-control{{ $errors->has('summernote') ? ' is-invalid' : '' }}" value="{!! (isset($custom)? $custom->hometext : old('hometext')) !!}" required>{!!$custom->hometext!!}</textarea>
+ 
+                    </div>
+                </div>
+
+
+                <div class="form-group row mb-0 mt-5">
                         <div class="col-md-4 offset-md-4">
                             <button type="submit" class="mx-auto btn appli-button">
                                 {{ __('Apply') }}
                             </button>
                         </div>
                     </div>
+
+                   
+                   
+                   
                 </form>
           </div>
         </div>

@@ -24,6 +24,7 @@ class CreateCustomizationsTable extends Migration
             $table->string('colorbtn')->nullable();
             $table->string('bgcolorbtn')->nullable();
             $table->string('logourl')->nullable();
+            $table->string('hometext',2300)->nullable();
             
 
             $table->timestamps();

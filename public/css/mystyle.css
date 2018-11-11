@@ -128,10 +128,18 @@ font-family:'Raleway'; */
 
 
 .font-montserrat{
-  font-family: 'Montserrat',Verdana, Tahoma, sans-serif;
+  font-family: 'Montserrat',Verdana, Tahoma, sans-serif,'Raleway';
+}
+.font-raleway{
+  font-family: 'Raleway',Verdana, Tahoma, sans-serif;
 }
 
 #div-logo {
   max-height: 192px;
   max-width: 192px;
 }
+
+.btn-minlarge{
+  min-width: 80px;
+}
+

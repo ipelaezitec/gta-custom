@@ -16,7 +16,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Poppins" rel="stylesheet" type="text/css">
-
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+    {{-- <script src="{{asset('js/summernote.js')}}"> </script> --}}
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
@@ -94,7 +98,26 @@
         </main>
     </div>
 
+    <script>
+        
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            width:440,
+            height: 600,
+            toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    // ['height', ['height']]
+  ]
+          });
 
+    // ['fontsize', ['8', '9', '10', '11', '12', '14', '18']],
+        
+    </script>
     {{-- Changed @if to @isset --}}
     @isset ($custom)
         <script>
@@ -106,10 +129,14 @@
             logo.src = '{{ $custom->logourl }}';
 
             btnsNav =  document.querySelectorAll(".general-button");
+            lineDiv =  document.querySelector(".line");
             for (let i = 0; i < btnsNav.length; i++) {
-                btnsNav[i].style.color = '{{ $custom->colorbtn }}';
+                btnsNav[i].style.border = ' solid 1px {{ $custom->colorbtn }}';
                 btnsNav[i].style.backgroundColor = '{{ $custom->bgcolorbtn }}';
             }
+            console.log(lineDiv.style);
+            
+            lineDiv.style.backgroundColor = '{{ $custom->colorbtn }}';
         </script>
     @endisset
 
