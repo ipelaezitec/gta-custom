@@ -17,7 +17,9 @@
             </div>
             {{-- <p class="mb-1">Whitout State</p> --}}
             <div class="d-flex flex-row bd-highlight -mb-3">
-              <button class="btn btn-danger">Denied</button>
+              @isset($user->application)
+                <button class="btn btn-sm btn-danger">Denied</button>
+              @endisset
             </div>
             <small>{{$user->email}}.</small>
           </a>

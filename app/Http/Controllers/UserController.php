@@ -30,6 +30,7 @@ class UserController extends Controller
     {   
         // $user=User::where('username', $username)->first();
         $user=User::find($userId);
+        // dd($user->application->explanation);
         return view('panel.user',[
             'user'=>$user,
             ]);
