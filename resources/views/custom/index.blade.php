@@ -19,7 +19,7 @@
                       <label for="logo" class="col-md-2 col-form-label text-md-right">{{ __('Logo') }}</label>
 
                       <div class="col-md-8">
-                          <input id="logo" type="url" class="form-control {{ $errors->has('logo') ? ' is-invalid' : '' }}" name="logo" value="{{ (isset($custom)? $custom->logourl : old('logo')) }}" placeholder="url logo" onchange="javascript:document.getElementById('logo-preview').src = document.getElementById('logo').value; document.getElementById('logo-preview').style.display = 'block';" required autofocus>
+                          <input id="logo-input" type="url" class="form-control {{ $errors->has('logo') ? ' is-invalid' : '' }}" name="logo" value="{{ (isset($custom)? $custom->logourl : old('logo')) }}" placeholder="url logo" onchange="javascript:document.getElementById('logo-preview').src = document.getElementById('logo-input').value; document.getElementById('logo-preview').style.display = 'block';" required autofocus>
                           @if ($errors->has('logo'))
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $errors->first('logo') }}</strong>
@@ -38,7 +38,7 @@
                       <label for="background" class="col-md-2 col-form-label text-md-right">{{ __('Background') }}</label>
 
                       <div class="col-md-8">
-                          <input id="background" type="url" class="form-control{{ $errors->has('background') ? ' is-invalid' : '' }}" name="background" value="{{ (isset($custom)? $custom->backgroundurl : old('background')) }}" placeholder="url background" onchange="javascript:document.getElementById('background-preview').src = document.getElementById('background').value; document.getElementById('background-preview').style.display = 'block';" required autofocus>
+                          <input id="background-input" type="url" class="form-control{{ $errors->has('background') ? ' is-invalid' : '' }}" name="background" value="{{ (isset($custom)? $custom->backgroundurl : old('background')) }}" placeholder="url background" onchange="javascript:document.getElementById('background-preview').src = document.getElementById('background-input').value; document.getElementById('background-preview').style.display = 'block';" required autofocus>
 
                           @if ($errors->has('background'))
                               <span class="invalid-feedback" role="alert">
@@ -163,19 +163,35 @@
                         @endif
                     </div>
                 </div>
-                 <div class="form-group row">
-                    <label for="color" class="col-md-2 col-form-label text-md-right">{{ __('Color') }}</label>
+                <label for="image1" class="col-md-12">{{ __('Colors Nav Buttons:') }}</label>
+                <div class="form-group row">
+                    <label for="colorbtn" class="col-md-2 col-form-label text-md-right">{{ __('Text button') }}</label>
                     
                     <div class="col-md-5">
-                        <input id="color" type="color" class="col-10" name="color" value="{{ old('color') }}" onchange="javascript:document.getElementById('chosen-color').value = document.getElementById('color').value;">                        
-                        @if ($errors->has('chosen-color'))
+                        <input id="colorbtn" type="color" class="col-10" name="colorbtn" value="{{ (isset($custom)? $custom->colorbtn : old('colorbtn')) }}" onchange="javascript:document.getElementById('chosen-colorbtn').value = document.getElementById('colorbtn').value;">                        
+                        @if ($errors->has('chosen-colorbtn'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('chosen-color') }}</strong>
+                            <strong>{{ $errors->first('chosen-colorbtn') }}</strong>
                         </span>
                         @endif
                     </div>
                     <div class="col-md-3">
-                        <input id="chosen-color" type="text" class="form-control{{$errors->has('chosen-color') ? ' is-invalid' : '' }}" name="chosen-color" value="{{ (isset($custom)? $custom->color : old('chosen-color')) }}" onchange="javascript:document.getElementById('color').value = document.getElementById('chosen-color').value;" required autofocus>
+                        <input id="chosen-colorbtn" type="text" class="form-control{{$errors->has('chosen-colorbtn') ? ' is-invalid' : '' }}" name="chosen-colorbtn" value="{{ (isset($custom)? $custom->colorbtn : old('chosen-colorbtn')) }}" onchange="javascript:document.getElementById('colorbtn').value = document.getElementById('chosen-colorbtn').value;" required autofocus>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="bgcolorbtn" class="col-md-2 col-form-label text-md-right">{{ __('Background button') }}</label>
+                    
+                    <div class="col-md-5">
+                        <input id="bgcolorbtn" type="color" class="col-10" name="bgcolorbtn" value="{{ (isset($custom)? $custom->bgcolorbtn : old('bgcolorbtn')) }}" onchange="javascript:document.getElementById('chosen-bgcolorbtn').value = document.getElementById('bgcolorbtn').value;">                        
+                        @if ($errors->has('chosen-bgcolorbtn'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('chosen-bgcolorbtn') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="col-md-3">
+                        <input id="chosen-bgcolorbtn" type="text" class="form-control{{$errors->has('chosen-bgcolorbtn') ? ' is-invalid' : '' }}" name="chosen-bgcolorbtn" value="{{ (isset($custom)? $custom->bgcolorbtn : old('chosen-bgcolorbtn')) }}" onchange="javascript:document.getElementById('bgcolorbtn').value = document.getElementById('chosen-bgcolorbtn').value;" required autofocus>
                     </div>
                 </div>
                 <div class="form-group row mb-0">
@@ -193,4 +209,5 @@
     </div>
     
 </div>
+
 @endsection

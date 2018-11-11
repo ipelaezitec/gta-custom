@@ -36,7 +36,8 @@ class CustomController extends Controller
         $custom->logourl = $request->input('logo');
         $custom->backgroundurl = $request->input('background');
         $custom->videourl = $request->input('video');
-        $custom->color = $request->input('color');
+        $custom->colorbtn = $request->input('colorbtn');
+        $custom->bgcolorbtn = $request->input('bgcolorbtn');
         $custom->save();
 
         $images = Customimage::where('custom_id', 1)->get();
