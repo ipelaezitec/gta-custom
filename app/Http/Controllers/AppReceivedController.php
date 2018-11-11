@@ -4,22 +4,25 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\Application;
+use gta\Customization;
 
 class AppReceivedController extends Controller
 {
     public function showAppsReceived()
     {
 
-        $appsReceived = Application::paginate(50);
+        $appsReceived = Application::where('state_id','=',2)->paginate(50);
+        
         
         // foreach ($users as $user){
         //     $states[] = $user->state;
         // }
-        
-        return view('panel.appreceived',[
-            'appsReceived'=>$appsReceived,
+        $custom = Customization::find(1);
 
-        ]);
+        return view('panel.appreceived',compact('custom','appsReceived'));
+        //     'appsReceived'=>$appsReceived,
+
+        // ]);
 
         // return view('panel.appreceived',[]);
     }
@@ -27,6 +30,9 @@ class AppReceivedController extends Controller
     public function showSingleApp($applicationId)
     
     {
-        return view('panel.singleapp',[]);
+
+        $custom = Customization::find(1);
+        
+        return view('panel.singleapp',compact('custom'));
     }
 }

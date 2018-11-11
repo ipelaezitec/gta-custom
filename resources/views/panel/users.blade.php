@@ -6,7 +6,7 @@
     <h2 class="text-center font-montserrat">Users panel</h2>
     <!-- lista de usuarios-->
 
-
+    <hr>
 
     <div class="list-group">
         @forelse ($users as $user)
@@ -17,9 +17,12 @@
             </div>
             {{-- <p class="mb-1">Whitout State</p> --}}
             <div class="d-flex flex-row bd-highlight -mb-3">
-              @isset($user->application)
-                <button class="btn btn-sm btn-danger">Denied</button>
-              @endisset
+             
+                {{-- todo low priority: probablemente intentar hacer andar el user->application->state->name --}}
+                {{-- todo: filtrar usuarios por fecha, nombre, email,  estado (esto seria mas facil con bottones que te lleven a /panel/users/accepted , etc) --}}
+                @include('panel.stateswitch')
+
+             
             </div>
             <small>{{$user->email}}.</small>
           </a>

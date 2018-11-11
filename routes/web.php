@@ -30,7 +30,7 @@ Route::get('/panel/custom','CustomController@index')->name('custom');
 Route::post('/panel/custom/store','CustomController@store')->name('store');
 // panel / app received
 Route::get('/panel/appreceived','AppReceivedController@showAppsReceived');
-Route::get('/panel/appreceived/{id)','AppReceivedController@showSingleApp');
+Route::get('/panel/appreceived/{id}','AppReceivedController@showSingleApp');
 
 //panel / user
 Route::get('/panel/users','UserController@showUsers');

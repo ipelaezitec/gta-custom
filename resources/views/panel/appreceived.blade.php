@@ -5,7 +5,7 @@
   <div class="container">
     <!-- lista de aplicaciones recividas-->
     <h2 class="text-center font-montserrat"> Applications received</h2>
-    
+    <hr>
     <!-- Todo : Necesito hacer que aparezcan if aplication->state == 2       2 = "on wait" -->
 
 

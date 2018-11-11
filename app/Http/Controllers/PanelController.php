@@ -3,11 +3,15 @@
 namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
+use gta\Customization;
+
 
 class PanelController extends Controller
 {
     public function index()
     {
-        return view('panel.index',[]);
+        $custom = Customization::find(1);
+        
+        return view('panel.index',compact('custom'));
     }
 }

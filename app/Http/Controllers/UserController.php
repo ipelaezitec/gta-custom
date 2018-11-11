@@ -4,6 +4,7 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
+use gta\Customization;
 
 class UserController extends Controller
 {
@@ -11,18 +12,11 @@ class UserController extends Controller
     // para mostrar todos los users en el panel
     public function showUsers()
     {
-        
         $users = User::paginate(50);
+        // dd($users[0]->application->state_id);   
+        $custom = Customization::find(1);
         
-        // Todo : Necesito mostrar el state en panel/users y panel/user
-        // foreach ($users as $user){
-        //     $states[] = $user->state;
-        // }
-        
-        return view('panel.users',[
-            'users'=>$users,
-
-        ]);
+        return view('panel.users',compact('custom','users'));
     }
 
     // para mostrar un solo usuario en /panel/users/<slug>
@@ -30,10 +24,13 @@ class UserController extends Controller
     {   
         // $user=User::where('username', $username)->first();
         $user=User::find($userId);
-        // dd($user->application->explanation);
-        return view('panel.user',[
-            'user'=>$user,
-            ]);
+        $custom = Customization::find(1);
+
+        
+        // dd($user->application);
+        return view('panel.user',compact('custom','user'));
+            // 'user'=>$user,
+            // ]);
     }
 
 }
