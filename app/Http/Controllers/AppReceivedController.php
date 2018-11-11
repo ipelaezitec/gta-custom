@@ -4,10 +4,18 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\Application;
+<<<<<<< HEAD
 use gta\Customization;
+=======
+use gta\Auth;
+>>>>>>> dev
 
 class AppReceivedController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     public function showAppsReceived()
     {
 

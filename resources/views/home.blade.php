@@ -81,16 +81,19 @@
                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                aaaaaaa
                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            
-                        <button class="mx-auto btn appli-button">
-                           Apply today!
-                       </button>
+                        <a href="{{ route('app') }}">    
+                            <button class="mx-auto btn appli-button">
+                                Apply today!
+                            </button>
+                        </a>
  
                    </div>
         </div>
     
     </div>    
 </div>
+@include('layouts.login')
+
 @endsection
 
 {{-- <div class="row justify-content-center">
