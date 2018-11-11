@@ -4,9 +4,13 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
+use gta\Auth;
 
 class UserController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     
     // para mostrar todos los users en el panel
     public function showUsers()

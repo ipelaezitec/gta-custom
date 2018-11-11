@@ -35,7 +35,7 @@
                         <a href="/" class="m-1">
                             <button class="general-button">Home</button>
                         </a>
-                        <a href="" class="m-1">
+                        <a href="{{ route('contact') }}" class="m-1">
                             <button class="general-button">Contact</button>
                         </a>
                     </div>  
@@ -46,13 +46,18 @@
                     
                     <div class="d-flex">
                             @guest
-                            <a href="" class="m-1">
-                                <button class="general-button">Login</button>
-                            </a>
+                            {{-- <a id="btn-login" href="{{ route('login') }}" class="m-1"> --}}
+                                <button class="general-button m-1" data-toggle="modal" data-target="#exampleModal">Login</button>
+                            {{-- </a> --}}
                             <a href="{{ route('register') }}" class="m-1">
                                 <button class="general-button">Sign Up</button>
                             </a>
                         @else
+                            @if (Auth::id() == 1)
+                                <a href="{{ route('panel') }}" class="m-1">
+                                    <button class="general-button">Panel</button>
+                                </a>
+                            @endif
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
@@ -93,6 +98,7 @@
     {{-- Changed @if to @isset --}}
     @isset ($custom)
         <script>
+            
             background = document.getElementById('background');
             background.style.backgroundImage = "url('{{ $custom->backgroundurl }}')";
 

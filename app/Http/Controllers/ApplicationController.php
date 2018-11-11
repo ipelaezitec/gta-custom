@@ -3,14 +3,20 @@
 namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
+use gta\Auth;
 
 class ApplicationController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         return view('application.application');

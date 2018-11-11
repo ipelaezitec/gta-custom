@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use gta\Http\Requests\StoreCustomPost;
 use gta\Customization;
 use gta\Customimage;
+use gta\Auth;
 
 class CustomController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     public function index() {
         $custom = Customization::find(1);
         if($custom) {

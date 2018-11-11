@@ -17,8 +17,10 @@
 
 Auth::routes();
 
-Route::get('/','HomeController@index');
-Route::get('/application','ApplicationController@index');
+Route::get('/','HomeController@index')->name('home');
+Route::get('/contact','ContactController@index')->name('contact');
+//Route::get('/home','HomeController@index')
+Route::get('/application','ApplicationController@index')->name('app');
 
 
 

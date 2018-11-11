@@ -62,4 +62,5 @@
         </div>
     </div>
 </div>
+@include('layouts.login')
 @endsection
