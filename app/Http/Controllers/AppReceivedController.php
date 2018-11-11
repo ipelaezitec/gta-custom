@@ -4,7 +4,6 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\Application;
-use gta\Customization;
 use gta\Auth;
 
 class AppReceivedController extends Controller
@@ -22,9 +21,7 @@ class AppReceivedController extends Controller
         // foreach ($users as $user){
         //     $states[] = $user->state;
         // }
-        $custom = Customization::find(1);
-
-        return view('panel.appreceived',compact('custom','appsReceived'));
+        return view('panel.appreceived',compact('appsReceived'));
         //     'appsReceived'=>$appsReceived,
 
         // ]);
@@ -33,11 +30,8 @@ class AppReceivedController extends Controller
     }
 
     public function showSingleApp($applicationId)
-    
     {
-
-        $custom = Customization::find(1);
         
-        return view('panel.singleapp',compact('custom'));
+        return view('panel.singleapp');
     }
 }

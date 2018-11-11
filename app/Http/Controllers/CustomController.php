@@ -25,7 +25,7 @@ class CustomController extends Controller
         //dd($custom);
         //dd($images);
         
-        return view('custom.index', compact('custom', 'images'));
+        return view('custom.index', compact('images'));
     }
 
     public function store(StoreCustomPost $request) {

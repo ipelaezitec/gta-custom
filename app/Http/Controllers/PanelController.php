@@ -3,7 +3,6 @@
 namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
-use gta\Customization;
 use gta\Auth;
 
 class PanelController extends Controller
@@ -13,7 +12,6 @@ class PanelController extends Controller
     }
 
     public function index() {
-        $custom = Customization::find(1);
-        return view('panel.index',compact('custom'));
+        return view('panel.index');
     }
 }

@@ -4,7 +4,6 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
-use gta\Customization;
 use gta\Auth;
 
 class UserController extends Controller
@@ -18,9 +17,8 @@ class UserController extends Controller
     {
         $users = User::paginate(50);
         // dd($users[0]->application->state_id);   
-        $custom = Customization::find(1);
-        
-        return view('panel.users',compact('custom','users'));
+
+        return view('panel.users',compact('users'));
     }
 
     // para mostrar un solo usuario en /panel/users/<slug>
@@ -28,11 +26,9 @@ class UserController extends Controller
     {   
         // $user=User::where('username', $username)->first();
         $user=User::find($userId);
-        $custom = Customization::find(1);
-
         
         // dd($user->application);
-        return view('panel.user',compact('custom','user'));
+        return view('panel.user',compact('user'));
             // 'user'=>$user,
             // ]);
     }

@@ -4,6 +4,8 @@ namespace gta\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\View;
+use gta\Customization;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -23,8 +25,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
-
+        $custom = Customization::find(1);
+        View::share('custom', $custom);
+        //$this->registerPolicies();
         //
     }
 }
