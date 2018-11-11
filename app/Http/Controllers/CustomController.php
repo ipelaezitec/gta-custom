@@ -16,10 +16,11 @@ class CustomController extends Controller
     
     public function index() {
         $custom = Customization::find(1);
+        //dd($custom);
         if($custom) {
             $images = Customimage::where('custom_id', $custom->id)->get();
         }else {
-            $images =[];
+            $images = [];
         }
         //dd($custom);
         //dd($images);

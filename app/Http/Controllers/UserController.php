@@ -39,7 +39,9 @@ class UserController extends Controller
 
     public function deleteUser($userId){
         $user = User::find($userId);
-        $user->delete();
+        if ($userId != 1) {
+            $user->delete();
+        }
         return redirect('/panel/users');
         // todo : con ->with podría poner que el usuario se borró exitosamente.
     }
