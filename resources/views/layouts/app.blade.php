@@ -62,8 +62,8 @@
                                     <button class="general-button">Panel</button>
                                 </a>
                             @endif
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle login-name" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                               Welcome {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
         
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -130,13 +130,14 @@
 
             btnsNav =  document.querySelectorAll(".general-button");
             lineDiv =  document.querySelector(".line");
+            nameDiv =  document.querySelector(".login-name");
+            console.log(nameDiv);
             for (let i = 0; i < btnsNav.length; i++) {
                 btnsNav[i].style.border = ' solid 1px {{ $custom->colorbtn }}';
                 btnsNav[i].style.backgroundColor = '{{ $custom->bgcolorbtn }}';
             }
-            console.log(lineDiv.style);
-            
             lineDiv.style.backgroundColor = '{{ $custom->colorbtn }}';
+            nameDiv.style.color = '{{ $custom->colorbtn }}';
         </script>
     @endisset
 

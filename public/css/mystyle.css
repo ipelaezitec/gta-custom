@@ -120,6 +120,8 @@ font-family:'Raleway'; */
   /* padding:10px; */
 
 }
+
+/* idk */ 
 .div-preview {
   max-height: 100px;
   max-width: 100px;
@@ -143,3 +145,13 @@ font-family:'Raleway'; */
   min-width: 80px;
 }
 
+
+/* /application style */
+
+.form-square{
+  max-width: 100%;
+  /* border-radius: 8px; */
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 200px;
+  box-shadow:0 10px 10px 0 rgba(0, 0, 0, 1);
+}
