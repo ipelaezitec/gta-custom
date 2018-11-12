@@ -5,6 +5,7 @@ namespace gta\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use gta\Customization;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,8 +16,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $custom = Customization::find(1);
-        View::share('custom', $custom);
+        if (Schema::hasTable('customizations')) {
+            $custom = Customization::find(1);
+            View::share('custom', $custom);
+        }
     }
 
     /**

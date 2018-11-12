@@ -30,7 +30,7 @@
                           @endif
                       </div>
                     <div class="col-md-2 div-preview">
-                        @if ($custom)
+                        @if (isset($custom))
                             <img id="logo-preview" src="{{ $custom->logourl }}" class="img-fluid img-thumbnail" title="logo" alt="Error">
                         @else
                             <img id="logo-preview" src="" class="img-fluid img-thumbnail" title="logo" style="display: none;" alt="Error"> 
@@ -50,7 +50,7 @@
                           @endif
                       </div>
                        <div class="col-md-2 div-preview">
-                        @if ($custom)
+                        @if (isset($custom))
                             <img id="background-preview" src="{{ $custom->backgroundurl }}" class="img-fluid img-thumbnail" title="background" alt="Error">
                         @else
                             <img id="background-preview" src="" class="img-fluid img-thumbnail" title="background" style="display: none;" alt="Error">
@@ -201,7 +201,7 @@
                 
                 <div class="container">
                     <div class="row justify-content-md-center">
-                        <textarea id="summernote" name="editordata"  class="form-control{{ $errors->has('summernote') ? ' is-invalid' : '' }}" value="{!! (isset($custom)? $custom->hometext : old('hometext')) !!}" required>{!!$custom->hometext!!}</textarea>
+                        <textarea id="summernote" name="editordata"  class="form-control{{ $errors->has('summernote') ? ' is-invalid' : '' }}" value="{{ (isset($custom)? $custom->hometext : old('editordata')) }}" required>{{ (isset($custom)? $custom->hometext : "") }}</textarea>
  
                     </div>
                 </div>

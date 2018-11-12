@@ -14,7 +14,7 @@
                             <li data-target="#carouselExampleControls" data-slide-to="4"></li>
                         </ol>
                         <div class="carousel-inner">
-                            @if (!$custom)
+                            @if (!isset($custom))
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1535256396516x634409788530319900%2Flarge.20180728020246_1.jpg.8250ed43c66c1f6282da4b76d31a1c58.jpg?w=768&h=431&auto=compress&fit=max" alt="First slide">
                                 </div>
@@ -51,7 +51,7 @@
            
             <div class="row mt-4 video-row">
                 <div class="embed-responsive embed-responsive-16by9">
-                    @if (!$custom)
+                    @if (!isset($custom))
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fB8TyLTD7EE"allowfullscreen></iframe>
                     @else
                         <iframe class="embed-responsive-item" src="{{ $custom->videourl }}"allowfullscreen></iframe>
@@ -62,7 +62,7 @@
         <div class="col-5">
                    <div class="custom-card p-4 mt-4">
                        <div class="font-raleway">
-                        @if (!$custom)
+                        @if (!isset($custom))
                             Welcome !
                         @else
                         {!!$custom->hometext!!}
