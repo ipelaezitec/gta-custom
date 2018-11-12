@@ -60,21 +60,23 @@
             </div>
         </div>
         <div class="col-5">
-                   <div class="custom-card p-4 mt-4">
-                       <div class="font-raleway">
-                        @if (!isset($custom))
-                            Welcome !
-                        @else
-                        {!!$custom->hometext!!}
-                        @endif   
-                               
+            <div class="custom-card p-4 mt-4">
+                <div class="font-raleway">
+                    @if (!isset($custom))
+                        Welcome !
+                    @else
+                    {!!$custom->hometext!!}
+                    @endif   
+                    @guest
+                    @else    
                         <a href="{{ route('app') }}">    
                             <button class="mx-auto btn appli-button">
                                 Apply today!
                             </button>
                         </a>
- 
-                   </div>
+                    @endguest
+                    
+            </div>
         </div>
     
     </div>    

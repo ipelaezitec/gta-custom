@@ -3,7 +3,7 @@
 namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
-use gta\Auth;
+use Auth;
 
 class PanelController extends Controller
 {
@@ -12,6 +12,8 @@ class PanelController extends Controller
     }
 
     public function index() {
+        Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
+
         return view('panel.index');
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use gta\Http\Requests\StoreCustomPost;
 use gta\Customization;
 use gta\Customimage;
-use gta\Auth;
+use Auth;
 
 class CustomController extends Controller
 {
@@ -15,6 +15,9 @@ class CustomController extends Controller
     }
     
     public function index() {
+
+        Auth::user()->authorizeRoles('SuperAdmin');
+
         $custom = Customization::find(1);
         //dd($custom);
         if($custom) {
