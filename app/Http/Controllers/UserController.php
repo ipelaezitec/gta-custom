@@ -4,10 +4,14 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
+<<<<<<< HEAD
 use gta\Answer;
 use gta\Question;
 use gta\Application;
 
+=======
+use gta\Role;
+>>>>>>> dev
 use Auth;
 
 class UserController extends Controller
@@ -35,6 +39,7 @@ class UserController extends Controller
     {   
         Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
 
+<<<<<<< HEAD
         
         $user=User::find($userId);
 
@@ -44,6 +49,16 @@ class UserController extends Controller
 
         return view('panel.user',compact('user','answers'));
     
+=======
+        // $user=User::where('username', $username)->first();
+        $user=User::find($userId);
+
+        $roles = Role::all();
+        // dd($user->application);
+        return view('panel.user',compact('user', 'roles'));
+            // 'user'=>$user,
+            // ]);
+>>>>>>> dev
     }
 
     public function deleteUser($userId){
@@ -55,6 +70,20 @@ class UserController extends Controller
         }
         return redirect('/panel/users');
         // todo : con ->with podría poner que el usuario se borró exitosamente.
+    }
+
+    public function changeRole(Request $request)
+    {   
+        //return $request->all();
+        $userid = $request->input('userid');
+        $roleid = (int) $request->input('role');
+
+        $user = User::find($userid);
+
+        $user->roles()->detach();
+        $user->roles()->attach($roleid);
+
+        return redirect()->route('user', ['id' => $userid]);
     }
 
 }
