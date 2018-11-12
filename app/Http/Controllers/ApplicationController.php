@@ -5,7 +5,7 @@ namespace gta\Http\Controllers;
 use Illuminate\Http\Request;
 use gta\Http\Requests\CreateApplication;
 
-use gta\Auth;
+use Auth;
 use gta\Application;
 use gta\Answer;
 use gta\Question;
