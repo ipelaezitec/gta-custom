@@ -5,6 +5,9 @@ namespace gta\Http\Controllers;
 use Illuminate\Http\Request;
 use gta\Application;
 use Auth;
+use gta\User;
+use gta\Answer;
+
 
 class AppReceivedController extends Controller
 {
@@ -32,8 +35,15 @@ class AppReceivedController extends Controller
 
     public function showSingleApp($applicationId)
     {
+
         Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
 
-        return view('panel.singleapp');
+        $user=User::find($applicationId);
+
+        if (isset($user->application->id)) {
+            $answers = Answer::where('application_id',$user->application->id)->get();
+        }
+
+        return view('panel.singleapp',compact('user','answers'));
     }
 }

@@ -17,7 +17,7 @@ class CreateApplicationsTable extends Migration
             $table->increments('id');
             
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
             
             // $table->integer('answer_id')->unsigned();
             // $table->foreign('answer_id')->references('id')->on('answers');
@@ -25,7 +25,7 @@ class CreateApplicationsTable extends Migration
             $table->integer('state_id')->unsigned();
             $table->foreign('state_id')->references('id')->on('states');
             
-            $table->string('explanation');
+            $table->string('explanation',4000)->nullable();
             
             $table->timestamps();
         });

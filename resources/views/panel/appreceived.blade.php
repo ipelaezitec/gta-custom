@@ -13,7 +13,8 @@
         @forelse ($appsReceived as $appReceived)
 
           <!-- aca iria el link a la app-->
-          <a href="/panel/{{$appReceived->id}}" class="list-group-item list-group-item-action flex-column align-items-start ">
+          {{-- <a href="/panel/appreceived/{{$appReceived->user->id}}" class="list-group-item list-group-item-action flex-column align-items-start "> --}}
+          <a href=" {{ route('appreceivedview', $appReceived->user->id ) }} " class="list-group-item list-group-item-action flex-column align-items-start ">
         
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{$appReceived->user->name}}</h5>
