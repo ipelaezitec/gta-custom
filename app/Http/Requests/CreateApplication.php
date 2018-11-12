@@ -23,6 +23,7 @@ class CreateApplication extends FormRequest
      */
     public function rules()
     {
+        // dd($request);
         return [
             'answer1' => 'required|min:1|max:100',
             'age' => 'required|min:1|max:99',

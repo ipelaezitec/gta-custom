@@ -5,7 +5,7 @@ namespace gta\Http\Controllers;
 use Illuminate\Http\Request;
 use gta\Http\Requests\CreateApplication;
 
-use gta\Auth;
+use Auth;
 use gta\Application;
 use gta\Answer;
 use gta\Question;
@@ -24,7 +24,9 @@ class ApplicationController extends Controller
 
     public function index()
     {
-        Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
+
+        // todo : if user has application redirect '/'
+        Auth::user()->authorizeRoles(['SuperAdmin', 'Admin','User']);
 
         return view('application.application');
         //
@@ -37,21 +39,41 @@ class ApplicationController extends Controller
      */
     public function createApp(CreateApplication $appRequest)
     {
-        dd($appRequest);
-        $user = $aappRequest->user();
-
+        // dd($appRequest);
+        $user = $appRequest->user();
+        
         $app = new Application;
         $app->state_id = 2;
         $app->user_id = $user->id ; 
+        $app->explanation = '';
         $app->save();
-
+        
+        
         $dataAnswers = [];
 
-        $namesForm = ['age','legalcheck','departament','answer1','answer2','answer3','answer4'.'answer5','answer6','answer7'];
-
+        // dd($appRequest->input('answer5'));
+        
+        $namesForm = ['answer1',
+            'age',
+            'answer2',
+            'departament',
+            'legalcheck',
+            'answer3',
+            'answer4',
+            'answer5',
+            'answer6',
+            'answer7'];
+        
+        // dd($appRequest->input('answer5'));
+        
         foreach($namesForm as $name){
-            $dataAnswers[]= $appRequest->input($name);
+            if ($name == 'legalcheck' && $appRequest->input('legalcheck') == null ){
+                $dataAnswers[]= 0;
+            }else{
+                $dataAnswers[]= $appRequest->input($name);
+            }
         }
+        // dd($dataAnswers);
 
         $counter = 0; 
         foreach($dataAnswers as $data){

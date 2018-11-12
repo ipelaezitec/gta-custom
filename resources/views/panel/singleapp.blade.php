@@ -3,7 +3,7 @@
 @section('appcontent')
 
   <div class="container">
-    <h2 class="text-center font-montserrat"> User Panel</h2>
+    <h2 class="text-center font-montserrat"> Application user</h2>
         <hr>
         <div class="card" >
             {{-- <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image cap"> --}}
@@ -19,17 +19,11 @@
               
               @isset($answers)
 
-              @include('panel.applicomponent')
-             
+                @include('panel.applicomponent')
 
               @endisset
-
-              {{-- <p class="card-text">No sé que poner acá, probablemente el discord</p> --}}
             </div>
 
-              
-
-            </ul>
 
             <div class="card-body">
             <a href="/panel/user/delete/{{$user->id}}" class="card-link">Delete User</a>

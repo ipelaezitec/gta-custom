@@ -4,6 +4,10 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
+use gta\Answer;
+use gta\Question;
+use gta\Application;
+
 use Auth;
 
 class UserController extends Controller
@@ -19,24 +23,27 @@ class UserController extends Controller
 
         $users = User::paginate(50);
 
-        //dd($users[0]->roles[0]->name);
-        // dd($users[0]->application->state_id);   
+    
+
+        
 
         return view('panel.users',compact('users'));
     }
 
-    // para mostrar un solo usuario en /panel/users/<slug>
+    // para mostrar un solo usuario en /panel/users/id
     public function showUser($userId)
     {   
         Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
 
-        // $user=User::where('username', $username)->first();
-        $user=User::find($userId);
         
-        // dd($user->application);
-        return view('panel.user',compact('user'));
-            // 'user'=>$user,
-            // ]);
+        $user=User::find($userId);
+
+        if (isset($user->application->id)) {
+            $answers = Answer::where('application_id',$user->application->id)->get();
+        }
+
+        return view('panel.user',compact('user','answers'));
+    
     }
 
     public function deleteUser($userId){

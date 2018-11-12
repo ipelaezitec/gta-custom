@@ -8,21 +8,22 @@
           @csrf
             <div class="form-square p-3 mb-5">
 
+
+
                 <div class="form-group">
-                    <label for="question1">
+                    <label for="answer1">
                       <b>
                         What is your name?
                       </b>
                     </label>
                     
-                    <input id="question1" type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" name="question1"  value="{{ old('question1') }}" required maxlenght="100" autofocus>
+                    <input id="answer1" type="text" class="form-control {{ $errors->has('answer1') ? ' is-invalid' : '' }}" name="answer1"  value="{{ old('answer1') }}"  maxlenght="100" autofocus>
 
-                    @if ($errors->has('question1'))
+                    @if ($errors->has('answer1'))
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('question1') }}</strong>
+                          <strong>{{ $errors->first('answer1') }}</strong>
                       </span>
                      @endif
-                    {{-- value="{{ (isset($custom)? $custom->logourl : old('name')) }}" --}}
                 </div>
                 
                 <hr>
@@ -39,23 +40,23 @@
                           <strong>{{ $errors->first('age') }}</strong>
                       </span>
                      @endif
-                    {{-- <textarea class="form-control" id="question1" name="" rows="3" required></textarea> --}}
+                    {{-- <textarea class="form-control" id="answer1" name="" rows="3" required></textarea> --}}
                 </div>
             </div>
 
 
             <div class="form-square p-3 mb-5">
                 <div class="form-group">
-                    <label for="question2">
+                    <label for="answer2">
                       <b>
                         What is your discord name and #?
                       </b>
                     </label>
                     <hr>
-                    <textarea class="form-control" id="question2"  name="question2" rows="3" required placeholder="example#1234" maxlenght="50">{{old('question2')}}</textarea>
-                    @if ($errors->has('question2'))
+                    <textarea class="form-control" id="answer2"  name="answer2" rows="3" required placeholder="example#1234" maxlenght="50">{{old('answer2')}}</textarea>
+                    @if ($errors->has('answer2'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('question2') }}</strong>
+                        <strong>{{ $errors->first('answer2') }}</strong>
                     </span>
                    @endif
                   </div>
@@ -81,7 +82,7 @@
 
                 <div class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" name="legalcheck" id="legalcheck"
+                    <input class="form-check-input" type="checkbox" value="yes" name="legalcheck" id="legalcheck"
                     {{ (! empty(old('legalcheck')) ? 'checked' : '') }}>
                     <label class="form-check-label" for="legalcheck">
                       Legal copy of GTA 5?
@@ -94,20 +95,20 @@
                   </span>
                  @endif
                 </div>
-                    {{-- <textarea class="form-control" id="question1" name="" rows="3" required></textarea> --}}
+                    {{-- <textarea class="form-control" id="answer1" name="" rows="3" required></textarea> --}}
             </div>
             <div class="form-square p-3 mb-5">
                 <div class="form-group">
-                    <label for="question3">
+                    <label for="answer3">
                       <b>
                         Do you have any prior experience in this departament?
                       </b>
                     </label>
                     <hr>
-                    <textarea class="form-control {{ $errors->has('question3') ? ' is-invalid' : '' }}" id="question3" name="question3" rows="3" required maxlenght="3999" >{{old('question3')}}</textarea>
-                    @if ($errors->has('question3'))
+                    <textarea class="form-control {{ $errors->has('answer3') ? ' is-invalid' : '' }}" id="answer3" name="answer3" rows="3" required maxlenght="3999" >{{old('answer3')}}</textarea>
+                    @if ($errors->has('answer3'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('question3') }}</strong>
+                        <strong>{{ $errors->first('answer3') }}</strong>
                     </span>
                    @endif
                   </div>
@@ -115,16 +116,50 @@
 
             <div class="form-square p-3 mb-5">
                 <div class="form-group">
-                    <label for="question4">
+                    <label for="answer4">
                       <b>
                         In your own words, describe what this departament does.
                       </b>
                     </label>
                     <hr>
-                    <textarea class="form-control {{ $errors->has('question4') ? ' is-invalid' : '' }}" id="question4" name="question4" rows="3" required maxlenght="3999">{{old('question4')}}</textarea>
-                    @if ($errors->has('question4'))
+                    <textarea class="form-control {{ $errors->has('answer4') ? ' is-invalid' : '' }}" id="answer4" name="answer4" rows="3" required maxlenght="3999">{{old('answer4')}}</textarea>
+                    @if ($errors->has('answer4'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('question4') }}</strong>
+                        <strong>{{ $errors->first('answer4') }}</strong>
+                    </span>
+                   @endif
+                  </div>
+            </div>
+
+            {{-- <div class="form-square p-3 mb-5">
+                <div class="form-group">
+                    <label for="answer5">
+                      <b>
+                        Why should we pick you instead of another application?
+                      </b>
+                    </label>
+                    <hr>
+                    <textarea class="form-control {{ $errors->has('answer5') ? ' is-invalid' : '' }}" id="answer5" name="answer5" rows="3" required>{{old('answer5')}}</textarea>
+                    @if ($errors->has('answer5'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('answer5') }}</strong>
+                    </span>
+                   @endif
+                  </div>
+            </div> --}}
+
+            <div class="form-square p-3 mb-5">
+                <div class="form-group">
+                    <label for="answer5">
+                      <b>
+                            Why should we pick you instead of another application?
+                      </b>
+                    </label>
+                    <hr>
+                    <textarea class="form-control{{ $errors->has('answer5') ? ' is-invalid' : '' }}" id="answer5" name="answer5" rows="3" required>{{old('answer5')}}</textarea>
+                    @if ($errors->has('answer5'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('answer5') }}</strong>
                     </span>
                    @endif
                   </div>
@@ -132,48 +167,33 @@
 
             <div class="form-square p-3 mb-5">
                 <div class="form-group">
-                    <label for="question5">
-                      <b>
-                        Why should we pick you instead of another application?
-                      </b>
-                    </label>
-                    <hr>
-                    <textarea class="form-control {{ $errors->has('question5') ? ' is-invalid' : '' }}" id="question5" name="question5" rows="3" required maxlenght="3999">{{old('question5')}}</textarea>
-                    @if ($errors->has('question5'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('question5') }}</strong>
-                    </span>
-                   @endif
-                  </div>
-            </div>
-            <div class="form-square p-3 mb-5">
-                <div class="form-group">
-                    <label for="question6">
+                    <label for="answer6">
                       <b>
                         Put down any past roleplay servers and what role you played within them
                       </b>
                     </label>
                     <hr>
-                    <textarea class="form-control{{ $errors->has('question6') ? ' is-invalid' : '' }}" id="question6" name="question6" rows="3" required>{{old('question6')}}</textarea>
-                    @if ($errors->has('question6'))
+                    <textarea class="form-control{{ $errors->has('answer6') ? ' is-invalid' : '' }}" id="answer6" name="answer6" rows="3" required>{{old('answer6')}}</textarea>
+                    @if ($errors->has('answer6'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('question6') }}</strong>
+                        <strong>{{ $errors->first('answer6') }}</strong>
                     </span>
                    @endif
                   </div>
             </div>
+
             <div class="form-square p-3 mb-5">
                 <div class="form-group">
-                    <label for="question7">
+                    <label for="answer7">
                       <b>
                         Put down anything else that you would think will further influence your app or general knowledge we should know about.
                       </b>
                     </label>
                     <hr>
-                    <textarea class="form-control {{ $errors->has('question7') ? ' is-invalid' : '' }}" id="question7" name="question7" rows="3" required>{{old('question7')}}</textarea>
-                    @if ($errors->has('question7'))
+                    <textarea class="form-control {{ $errors->has('answer7') ? ' is-invalid' : '' }}" id="answer7" name="answer7" rows="3" required>{{old('answer7')}}</textarea>
+                    @if ($errors->has('answer7'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('question7') }}</strong>
+                        <strong>{{ $errors->first('answer7') }}</strong>
                     </span>
                    @endif
                   </div>
@@ -182,14 +202,14 @@
 
             {{-- <div class="form-square p-3 mb-5">
                 <div class="form-group">
-                    <label for="title" class="col-md-4 col-form-label text-md-right">What is your age?</label>
+                    <label for="answer1" class="col-md-4 col-form-label text-md-right">What is your age?</label>
         
                     
-                        <input id="title" type="text" class="form-control w-25{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}"  autofocus>
+                        <input id="answer1" type="text" class="form-control w-25{{ $errors->has('answer1') ? ' is-invalid' : '' }}" name="answer1" value="{{ old('answer1') }}"  autofocus>
         
-                        @if ($errors->has('title'))
+                        @if ($errors->has('answer1'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('title') }}</strong>
+                                <strong>{{ $errors->first('answer1') }}</strong>
                             </span>
                         @endif
                     
