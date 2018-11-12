@@ -25,7 +25,8 @@ Route::post('/application/createapp','ApplicationController@createApp')->name('a
 
 
 // profile
-Route::get('/profile/{id}','ProfileController@index')->name('profile');
+Route::get('/profile','ProfileController@index')->name('profile');
+Route::post('/profile/update','ProfileController@updateProfile')->name('update');
 
 // panel
 Route::get('/panel','PanelController@index')->name('panel');
