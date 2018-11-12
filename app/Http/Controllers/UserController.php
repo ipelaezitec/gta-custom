@@ -4,8 +4,7 @@ namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use gta\User;
-use gta\Customization;
-use gta\Auth;
+use Auth;
 
 class UserController extends Controller
 {
@@ -16,30 +15,37 @@ class UserController extends Controller
     // para mostrar todos los users en el panel
     public function showUsers()
     {
+        Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
+
         $users = User::paginate(50);
+
+        //dd($users[0]->roles[0]->name);
         // dd($users[0]->application->state_id);   
-        $custom = Customization::find(1);
-        
-        return view('panel.users',compact('custom','users'));
+
+        return view('panel.users',compact('users'));
     }
 
     // para mostrar un solo usuario en /panel/users/<slug>
     public function showUser($userId)
     {   
+        Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
+
         // $user=User::where('username', $username)->first();
         $user=User::find($userId);
-        $custom = Customization::find(1);
-
         
         // dd($user->application);
-        return view('panel.user',compact('custom','user'));
+        return view('panel.user',compact('user'));
             // 'user'=>$user,
             // ]);
     }
 
     public function deleteUser($userId){
+        Auth::user()->authorizeRoles('SuperAdmin');
+
         $user = User::find($userId);
-        $user->delete();
+        if ($userId != 1) {
+            $user->delete();
+        }
         return redirect('/panel/users');
         // todo : con ->with podría poner que el usuario se borró exitosamente.
     }

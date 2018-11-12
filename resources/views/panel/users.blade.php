@@ -13,6 +13,7 @@
           <a href="/panel/user/{{$user->id}}" class="list-group-item list-group-item-action flex-column align-items-start ">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{$user->name}}</h5>
+              <h5 class="mb-1">{{$user->roles[0]->name}}</h5>
               <small>created at : {{$user->created_at}}</small>
             </div>
             {{-- <p class="mb-1">Whitout State</p> --}}

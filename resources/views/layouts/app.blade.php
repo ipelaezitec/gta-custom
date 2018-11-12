@@ -57,7 +57,12 @@
                                 <button class="general-button">Sign Up</button>
                             </a>
                         @else
-                            @if (Auth::id() == 1)
+                            @if(Auth::user()->hasRole('SuperAdmin')) 
+                                <a href="{{ route('panel') }}" class="m-1">
+                                    <button class="general-button">Panel</button>
+                                </a>
+                            @endif
+                             @if(Auth::user()->hasRole('Admin')) 
                                 <a href="{{ route('panel') }}" class="m-1">
                                     <button class="general-button">Panel</button>
                                 </a>

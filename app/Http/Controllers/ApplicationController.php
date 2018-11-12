@@ -3,12 +3,16 @@
 namespace gta\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use gta\Http\Requests\CreateApplication;
 
 use gta\Auth;
 use gta\Application;
 use gta\Answer;
 use gta\Question;
+=======
+use Auth;
+>>>>>>> dev
 
 class ApplicationController extends Controller
 {
@@ -24,6 +28,8 @@ class ApplicationController extends Controller
 
     public function index()
     {
+        Auth::user()->authorizeRoles(['SuperAdmin', 'Admin']);
+
         return view('application.application');
         //
     }
