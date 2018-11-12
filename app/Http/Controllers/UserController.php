@@ -8,6 +8,7 @@ use gta\Answer;
 use gta\Question;
 use gta\Application;
 
+use gta\Role;
 use Auth;
 
 class UserController extends Controller
@@ -41,6 +42,7 @@ class UserController extends Controller
         if (isset($user->application->id)) {
             $answers = Answer::where('application_id',$user->application->id)->get();
         }
+        $roles = Role::all();
 
         return view('panel.user',compact('user','answers'));
     
@@ -55,6 +57,20 @@ class UserController extends Controller
         }
         return redirect('/panel/users');
         // todo : con ->with podría poner que el usuario se borró exitosamente.
+    }
+
+    public function changeRole(Request $request)
+    {   
+        //return $request->all();
+        $userid = $request->input('userid');
+        $roleid = (int) $request->input('role');
+
+        $user = User::find($userid);
+
+        $user->roles()->detach();
+        $user->roles()->attach($roleid);
+
+        return redirect()->route('user', ['id' => $userid]);
     }
 
 }

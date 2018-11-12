@@ -24,6 +24,9 @@ Route::get('/application','ApplicationController@index')->name('app');
 Route::post('/application/createapp','ApplicationController@createApp')->name('appcreate');
 
 
+// profile
+Route::get('/profile','ProfileController@index')->name('profile');
+Route::post('/profile/update','ProfileController@updateProfile')->name('update');
 
 // panel
 Route::get('/panel','PanelController@index')->name('panel');
@@ -39,7 +42,7 @@ Route::get('/panel/appreceived/{id}','AppReceivedController@showSingleApp')->nam
 Route::get('/panel/users','UserController@showUsers')->name('users');
 Route::get('/panel/user/{id}','UserController@showUser')->name('user');
 Route::get('/panel/user/delete/{id}','UserController@deleteUser')->name('deleteuser');
-    
+Route::post('/panel/user/changerole','UserController@changeRole')->name('changerole');
     
     // Route::get('/panel','PanelController@index');
 //Example Route::get('/user/show/{id}','UserController@show');
