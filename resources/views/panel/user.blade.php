@@ -15,16 +15,9 @@
               <small>{{$user->email}}</small>
               <hr>
               <p class="card-text">  @include('panel.stateswitch')</p>
-<<<<<<< HEAD
               <hr>
               
               @isset($answers)
-=======
-              <p class="card-text">No sé que poner acá, probablemente el discord</p>
-
-              
-            </div>
->>>>>>> dev
 
               @include('panel.applicomponent')
              
