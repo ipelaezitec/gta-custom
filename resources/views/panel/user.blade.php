@@ -16,6 +16,8 @@
               <hr>
               <p class="card-text">  @include('panel.stateswitch')</p>
               <p class="card-text">No sé que poner acá, probablemente el discord</p>
+
+              
             </div>
 
 
@@ -30,11 +32,46 @@
               
 
             </ul>
+            @if ( (Auth::user()->hasRole('SuperAdmin') && Auth::id() == $user->id) || $user->id == 1 ) 
+            @else
+              @if (Auth::user()->hasRole('SuperAdmin'))
+                <div class="col-md-4"> 
+                <!-- Rol Widget -->
+                    <div class="card my-12">
+                        <h5 class="card-header">Change Role</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                <form action="{{ route('changerole') }}" method="post">
+                                    @csrf
+                                    <input hidden type="text" name="userid" value="{{ $user->id }}">
+                                    <select name="role" class="custom-select" onChange="this.form.submit();">
+                                        @foreach ($roles as $role)
+                                            @if($role->id == $user->roles[0]->id)
+                                                <option value="{{ $role->id }}" class="value" selected>{{ $role->name }}</option>
+                                            @else
+                                                <option value="{{ $role->id }}" class="value">{{ $role->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                  </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              @endif
+            @endif
 
             <div class="card-body">
-            <a href="/panel/user/delete/{{$user->id}}" class="card-link">Delete User</a>
-              <a href="#" class="card-link">Change state</a>
-            </div>
+            @if ((Auth::user()->hasRole('SuperAdmin') && Auth::id() == $user->id) || $user->id == 1)
+            @else
+               @if (Auth::user()->hasRole('SuperAdmin'))
+                <a href="/panel/user/delete/{{$user->id}}" class="card-link">Delete User</a>
+                  <a href="#" class="card-link">Change state</a>
+                </div>
+              @endif
+            @endif
           </div>
 
   </div>

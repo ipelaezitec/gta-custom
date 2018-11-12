@@ -39,7 +39,7 @@ Route::get('/panel/appreceived/{id}','AppReceivedController@showSingleApp');
 Route::get('/panel/users','UserController@showUsers')->name('users');
 Route::get('/panel/user/{id}','UserController@showUser')->name('user');
 Route::get('/panel/user/delete/{id}','UserController@deleteUser')->name('deleteuser');
-    
+Route::post('/panel/user/changerole','UserController@changeRole')->name('changerole');
     
     // Route::get('/panel','PanelController@index');
 //Example Route::get('/user/show/{id}','UserController@show');
