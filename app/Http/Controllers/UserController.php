@@ -44,7 +44,7 @@ class UserController extends Controller
         }
         $roles = Role::all();
 
-        return view('panel.user',compact('user','answers'));
+        return view('panel.user',compact('user','answers','roles'));
     
     }
 

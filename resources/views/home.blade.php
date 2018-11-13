@@ -74,7 +74,7 @@
                             @switch($application->state_id)
                                 @case(2)
                                     <button class="btn w-100  appli-rta-wait">
-                                        On wait!
+                                        Awaiting Review!
                                     </button>
             
                                     @break

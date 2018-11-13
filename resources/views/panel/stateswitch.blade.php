@@ -5,7 +5,7 @@
         <button class="btn btn-sm btn-secondary w-25">Without state</button>
         @break
     @case(2)
-        <button class="btn btn-sm btn-info w-25">On wait</button>     
+        <button class="btn btn-sm btn-info w-25">Awaiting review</button>     
         @break
     @case(3)
         <button class="btn btn-sm btn-success w-25">Accepted</button>
