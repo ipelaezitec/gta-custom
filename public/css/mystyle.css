@@ -183,3 +183,7 @@ font-family:'Raleway'; */
   width: 200px;
   display:block;
 }
+
+.transp{
+  background-color: rgba(146, 146, 146, 0.555);
+}

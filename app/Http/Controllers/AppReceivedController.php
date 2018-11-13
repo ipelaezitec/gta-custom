@@ -54,7 +54,8 @@ class AppReceivedController extends Controller
     }
 
     public function changeState(AppReview $request){
-        Auth::user()->authorizeRoles('SuperAdmin');
+
+        Auth::user()->authorizeRoles(['SuperAdmin','Admin']);
     
 
         

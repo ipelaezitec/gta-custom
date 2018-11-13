@@ -20,6 +20,7 @@ class HomeController extends Controller
             // dd($user->application->id);
         }
 
+
         $images = Customimage::where('custom_id', 1)->get();
         
         return view('home',compact('images','application'));
