@@ -17,7 +17,7 @@
                       </b>
                     </label>
                     
-                    <input id="answer1" type="text" class="form-control {{ $errors->has('answer1') ? ' is-invalid' : '' }}" name="answer1"  value="{{ old('answer1') }}"  maxlenght="100" autofocus>
+                    <input id="answer1" type="text" class="form-control {{ $errors->has('answer1') ? ' is-invalid' : '' }}" name="answer1"  value="{{ old('answer1') }}"  maxlenght="100" autofocus required>
 
                     @if ($errors->has('answer1'))
                       <span class="invalid-feedback" role="alert">
