@@ -70,43 +70,50 @@
 
                     @guest
                     @else   
-                        @switch($application->state_id)
-                            @case(2)
-                                <button class="btn w-100  appli-rta-wait">
-                                    On wait!
-                                </button>
-          
-                                @break
-                            @case(3)
-                                
-                                <button class="btn w-100 appli-rta-accepted">
-                                    Accepted!
-                                </button>
-                                @isset ($application->explanation)
-                                <div class="explanation-square p-2 font-montserrat">
-                                    {{$application->explanation}}
-                                </div>
-                            @endisset
-                                @break
-                            @case(4)
-                                <button class="btn w-100 appli-rta-denied">
-                                    Denied!
-                                </button>
-                                @isset ($application->explanation)
+                        @if (isset($application))
+                            @switch($application->state_id)
+                                @case(2)
+                                    <button class="btn w-100  appli-rta-wait">
+                                        On wait!
+                                    </button>
+            
+                                    @break
+                                @case(3)
+                                    
+                                    <button class="btn w-100 appli-rta-accepted">
+                                        Accepted!
+                                    </button>
+                                    @isset ($application->explanation)
                                     <div class="explanation-square p-2 font-montserrat">
                                         {{$application->explanation}}
                                     </div>
                                 @endisset
-                                
-                                @break
-                            @default
+                                    @break
+                                @case(4)
+                                    <button class="btn w-100 appli-rta-denied">
+                                        Denied!
+                                    </button>
+                                    @isset ($application->explanation)
+                                        <div class="explanation-square p-2 font-montserrat">
+                                            {{$application->explanation}}
+                                        </div>
+                                    @endisset
+                                    
+                                    @break
+                                @default
+                                <a href="{{ route('app') }}">    
+                                        <button class="btn w-100  appli-button">
+                                            Apply today!
+                                    </button>
+                                </a>
+                            @endswitch
+                        @else
                             <a href="{{ route('app') }}">    
                                     <button class="btn w-100  appli-button">
                                         Apply today!
-                            </button>
+                                </button>
                             </a>
-                        @endswitch
-                       
+                        @endif
                     @endguest
                     
             </div>
