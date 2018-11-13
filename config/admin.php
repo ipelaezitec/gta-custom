@@ -2,7 +2,7 @@
 
 return [
    
-    'email' => 'example@gmail.com',
-    'name' => 'your_name',
+    'email' => 'laravelcontact@gmail.com',
+    'name' => 'AdminGTA',
      
 ];
