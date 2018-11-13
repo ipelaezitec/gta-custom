@@ -67,13 +67,46 @@
                     @else
                     {!!$custom->hometext!!}
                     @endif   
+
                     @guest
-                    @else    
-                        <a href="{{ route('app') }}">    
-                            <button class="mx-auto btn appli-button">
-                                Apply today!
+                    @else   
+                        @switch($application->state_id)
+                            @case(2)
+                                <button class="btn w-100  appli-rta-wait">
+                                    On wait!
+                                </button>
+          
+                                @break
+                            @case(3)
+                                
+                                <button class="btn w-100 appli-rta-accepted">
+                                    Accepted!
+                                </button>
+                                @isset ($application->explanation)
+                                <div class="explanation-square p-2 font-montserrat">
+                                    {{$application->explanation}}
+                                </div>
+                            @endisset
+                                @break
+                            @case(4)
+                                <button class="btn w-100 appli-rta-denied">
+                                    Denied!
+                                </button>
+                                @isset ($application->explanation)
+                                    <div class="explanation-square p-2 font-montserrat">
+                                        {{$application->explanation}}
+                                    </div>
+                                @endisset
+                                
+                                @break
+                            @default
+                            <a href="{{ route('app') }}">    
+                                    <button class="btn w-100  appli-button">
+                                        Apply today!
                             </button>
-                        </a>
+                            </a>
+                        @endswitch
+                       
                     @endguest
                     
             </div>

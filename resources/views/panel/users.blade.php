@@ -28,7 +28,7 @@
             <small>{{$user->email}}.</small>
           </a>
         @empty  
-          <h2 class="p-2 text-center font-montserrat"> No users </h2>
+          <h2 class="p-2 text-center font-montserrat"> No users</h2>
         @endforelse
       </div>
 

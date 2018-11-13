@@ -2,11 +2,17 @@
 
 namespace gta\Http\Controllers;
 
+
+use gta\Http\Requests\AppReview;
+
+
 use Illuminate\Http\Request;
 use gta\Application;
 use Auth;
 use gta\User;
 use gta\Answer;
+use gta\Role;
+
 
 
 class AppReceivedController extends Controller
@@ -45,5 +51,31 @@ class AppReceivedController extends Controller
         }
 
         return view('panel.singleapp',compact('user','answers'));
+    }
+
+    public function changeState(AppReview $request){
+        Auth::user()->authorizeRoles('SuperAdmin');
+    
+
+        
+        $app = Application::find($request->input('application'));
+        $app->explanation = $request->input('explanation');
+       
+        switch ($request->input('action')) {
+            case '1':
+                // 3 = accept
+                $app->state_id = 3;
+                break;
+
+            case '2':
+                // 4 = denied
+                $app->state_id = 4;
+                break;
+        }
+        $app->save();
+        
+        return redirect('/panel/appreceived');
+       
+
     }
 }

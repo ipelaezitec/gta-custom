@@ -19,22 +19,21 @@ class CustomController extends Controller
         Auth::user()->authorizeRoles('SuperAdmin');
 
         $custom = Customization::find(1);
-        //dd($custom);
+        
         if($custom) {
             $images = Customimage::where('custom_id', $custom->id)->get();
         }else {
             $images = [];
         }
-        //dd($custom);
-        //dd($images);
+        
+
         
         return view('custom.index', compact('images'));
     }
 
     public function store(StoreCustomPost $request) {
 
-        //dd($request->input('color'));
-        // dd($request);
+       
 
         $custom = Customization::find(1);
 
@@ -53,8 +52,8 @@ class CustomController extends Controller
         $custom->save();
 
         $images = Customimage::where('custom_id', 1)->get();
-        //dd($images);
-        //dd(empty($images));
+        
+        
         if ( count($images) > 0) {
             $cont = 0;
             foreach ($images as $image) {

@@ -18,10 +18,10 @@ class CreateAnswersTable extends Migration
             $table->string('text',4000);
 
             $table->integer('application_id')->unsigned()->nullable();
-            $table->foreign('application_id')->references('id')->on('applications');
+            $table->foreign('application_id')->references('id')->on('applications')->onDelete('cascade');
 
             $table->integer('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             
             $table->timestamps();
         });

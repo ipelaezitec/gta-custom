@@ -37,6 +37,7 @@ Route::post('/panel/custom/store','CustomController@store')->name('store');
 // panel / app received
 Route::get('/panel/appreceived','AppReceivedController@showAppsReceived');
 Route::get('/panel/appreceived/{id}','AppReceivedController@showSingleApp')->name('appreceivedview');
+Route::post('/panel/changeState/','AppReceivedController@changeState')->name('changestate');
 
 //panel / user
 Route::get('/panel/users','UserController@showUsers')->name('users');
